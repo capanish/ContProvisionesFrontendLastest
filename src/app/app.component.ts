@@ -8,6 +8,7 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'adif';
+  toggle = false;
   showMenu = false;
   constructor(
     private router: Router
@@ -24,5 +25,13 @@ export class AppComponent implements OnInit {
 
   show() {
     this.showMenu = !this.showMenu;
+  }
+  @HostListener('body:click', ['$event'])
+  onclick(event) {
+    const ele: HTMLElement = <HTMLElement> event.target;
+    const eleClass = ele.parentElement.parentElement;
+    if (eleClass && !eleClass.classList.contains('matMenu')) {
+      this.toggle = false;
+    }
   }
 }
