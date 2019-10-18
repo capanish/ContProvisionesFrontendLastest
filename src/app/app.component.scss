@@ -56,28 +56,11 @@ $border-gray: 1px solid lightgray;
         padding: 0 !important;
         min-width: auto !important;
     }
-    .menu {
-        position: relative;
-        user-select: none;
-        padding-top: 5px;
-        .dropdown-menu {
-            display: block;
-            position: absolute;
-            top: -20px;
-        }
-
-        .dropdown-item:active {
-            background-color: grey;
-        }
-    }
     .matMenu {
         padding-top: $spacing1;
         margin-bottom: $spacing1;
         border-bottom: $border-gray;
-        .toggleDropdown {
-            cursor: pointer;
-            display: inline-block;
-        };
+        cursor: pointer;
         span {
             top: -7px;
             left: 3px;
