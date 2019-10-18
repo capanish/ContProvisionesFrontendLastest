@@ -8,18 +8,13 @@
   </div>
 </header>
 <section id="home-content" class="container">
-  <div class="d-block d-lg-none menu">    
-      <div class="matMenu">
-        <span class="toggleDropdown" (click)="toggle = !toggle">
-            <mat-icon>menu</mat-icon><span>Menu</span>
-        </span>        
-      </div>
-      <div class="d-block d-lg-none dropdown" *ngIf="toggle">
-          <div class="dropdown-menu">
-              <a class="dropdown-item" routerLink="/cierres-contables">Cierres Contables</a>
-              <a class="dropdown-item" href="http://userv-3-adifv2.apps.okd.openshifthub.ml/consultant-periods">Certificacion Expedientes</a>
-          </div>
-      </div>
+  <div class="d-block d-lg-none">
+      <div class="matMenu" [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon><span>Menu</span></div>
+      <mat-menu #menu="matMenu" class="d-block d-lg-none">
+        <div class="mat-menu-item" mat-menu-item>
+            <a routerLink="/cierres-contables">Cierres Contables</a>
+        </div>
+      </mat-menu>
   </div>
   <div class="row content">
     <div class="col-lg-3 d-none d-lg-block">
